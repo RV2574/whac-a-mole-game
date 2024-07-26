@@ -1,0 +1,75 @@
+/* Ensure the body and html elements take up the full height of the viewport */
+body, html {
+    background: linear-gradient(to bottom, #2c3e50, #4ca1af); /* Gradient background */
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the game title and score/time info */
+h2 {
+    color: #ecf0f1; /* Light gray color for text */
+    margin: -5px; /* Remove default margin */
+    padding: 5px; /* Add padding for spacing */
+    font-size: 24px; /* Font size */
+    text-align: center; /* Center text alignment */
+    display: inline-block; /* Ensure elements are displayed inline and centered */
+}
+
+
+/* Container for the grid */
+.grid {
+    width: 606px;
+    height: 606px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #34495e; /* Dark gray-blue background for grid */
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners for the grid */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Style for each square in the grid */
+.square {
+    height: 180px; /* Adjust height to fit within the new grid size */
+    width: 180px;
+    margin: 3px;
+    border: solid #ecf0f1 2px; /* Slightly thicker white border */
+    border-radius: 10px; /* Rounded corners for squares */
+    background-color: #7f8c8d; /* Gray background for squares */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure the mole image does not overflow */
+}
+
+.square:hover {
+    background-color: #95a5a6; /* Lighter gray on hover */
+}
+
+/* Style for the mole */
+.mole {
+    background-image: url("mole.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 10px; /* Match the border radius of the squares */
+    animation: pop-up 0.3s ease-in-out; /* Animation for the mole */
+}
+
+/* Keyframes for the mole pop-up animation */
+@keyframes pop-up {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
